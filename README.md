@@ -13,8 +13,8 @@ que usam o middleware **ZeroMQ** (`pyzmq`) para os três padrões clássicos de 
 > respectivamente, às Figs. 4.21, 4.22 e 4.23. O código original foi mantido sem alterações
 > em [`original/`](original).
 
-A tarefa pedia: (1) testar os exemplos em **máquinas diferentes** (de preferência na AWS) e
-(2) **acrescentar novas funcionalidades**. Os dois itens estão descritos abaixo.
+O trabalho consiste em (1) executar os exemplos em **máquinas diferentes** e (2) **acrescentar
+novas funcionalidades** às aplicações.
 
 ---
 
@@ -24,7 +24,7 @@ A tarefa pedia: (1) testar os exemplos em **máquinas diferentes** (de preferên
 2. [Instalação (venv + pyzmq)](#instalação)
 3. [Novas funcionalidades](#novas-funcionalidades)
 4. [Como executar](#como-executar)
-5. [Executando em máquinas diferentes na AWS](#executando-em-máquinas-diferentes-na-aws)
+5. [Implantação na AWS](#implantação-na-aws)
 6. [Testes realizados e resultados](#testes-realizados-e-resultados)
 7. [Observações e problemas encontrados](#observações-e-problemas-encontrados)
 
@@ -210,7 +210,7 @@ python3 tasksrc.py 1 --tasks 100 --interval 0.1   # máquina fonte 1
 python3 tasksrc.py 2 --tasks 100 --interval 0.1   # máquina fonte 2
 ```
 
-## Executando em máquinas diferentes na AWS
+## Implantação na AWS
 
 ### 1. Criar as instâncias
 
@@ -251,22 +251,11 @@ Use os comandos da seção [Como executar](#como-executar), usando os **IPs priv
 (`172.31.x.x`) entre instâncias da mesma VPC. Ao testar do seu computador para a AWS,
 use o IP público — o servidor continua fazendo `bind` em `*`.
 
-### 5. Registrar os resultados
-
-Sugestão de comparação para o relatório (preencha com os seus números):
-
-| Cenário | RTT médio (`client.py --bench 1000`) | Vazão |
-|---|---|---|
-| Cliente e servidor na mesma instância (`--host localhost`) | | |
-| Instâncias diferentes, mesma AZ (IP privado) | | |
-| Instâncias em AZs/regiões diferentes | | |
-| Seu computador → AWS (IP público) | | |
-
-> **Importante:** pare/termine as instâncias depois dos testes para não gerar custo.
+Ao final, pare ou termine as instâncias para não gerar custo.
 
 ## Testes realizados e resultados
 
-Para validar o comportamento **entre máquinas diferentes** de forma reproduzível, o script
+Os testes entre máquinas diferentes foram feitos com o script
 [`docker/teste_multihost.sh`](docker/teste_multihost.sh) cria uma rede `172.28.0.0/16` e
 sobe **cada componente em um container separado, com hostname e IP próprios**
 (servidor `172.28.0.10`, clientes `.11`/`.12`, publishers `.20`/`.21`/`.25`, fontes `.30`/`.31`,
@@ -299,6 +288,17 @@ Hello world 2*
 [21:50:45] cliente1        STOP     'errada' -> STOP: senha incorreta
 [21:50:46] cliente1        STOP     'segredo' -> servidor encerrando
 ```
+Comparação do tempo de ida e volta (`client.py --bench 1000`):
+
+| Cenário | RTT médio | p95 | Vazão |
+|---|---|---|---|
+| Cliente e servidor na mesma máquina (`localhost`) | 0,124 ms | 0,144 ms | 8035 req/s |
+| Cliente e servidor em máquinas diferentes (`172.28.0.11` → `172.28.0.10`) | 0,333 ms | 0,479 ms | 2999 req/s |
+
+Entre máquinas diferentes, cada requisição passa pela pilha TCP/IP e pela rede, e o RTT
+fica cerca de 2,7× maior. Saídas completas em `resultados/fig421_bench_localhost.txt` e
+`resultados/fig421_estendido_clientes.txt`.
+
 Benchmark de outro host e comportamento com o servidor fora do ar:
 ```
 benchmark tcp://172.28.0.10:4567: 1000 requisicoes

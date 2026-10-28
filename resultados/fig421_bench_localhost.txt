@@ -1,0 +1,3 @@
+benchmark tcp://localhost:4567: 1000 requisicoes
+  media 0.124 ms | mediana 0.117 ms | min 0.111 ms | p95 0.144 ms | max 3.789 ms
+  vazao aprox.: 8035 req/s
