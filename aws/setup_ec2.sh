@@ -2,7 +2,7 @@
 # Prepara uma instancia EC2 (Ubuntu ou Amazon Linux) para rodar os exemplos.
 # Pode ser executado via SSH ou colado em "User data" ao criar a instancia.
 #
-#   bash setup_ec2.sh https://github.com/<usuario>/<repositorio>.git
+#   bash setup_ec2.sh https://github.com/fernandes-emmanuel/zeromq-Modificado.git
 set -e
 REPO=${1:-${REPO_URL:-}}
 if [ -z "$REPO" ]; then

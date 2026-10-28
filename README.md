@@ -62,8 +62,8 @@ A tarefa pedia: (1) testar os exemplos em **máquinas diferentes** (de preferên
 Em **cada** máquina que for rodar algum componente:
 
 ```bash
-git clone https://github.com/<usuario>/<este-repositorio>.git
-cd <este-repositorio>
+git clone https://github.com/fernandes-emmanuel/zeromq-Modificado.git
+cd zeromq-Modificado
 python3 -m venv venv
 source venv/bin/activate          # Windows: venv\Scripts\activate
 pip install -r requirements.txt   # instala o pyzmq (biblioteca do ZeroMQ)
@@ -236,9 +236,9 @@ Se quiser conectar do seu computador pelo **IP público**, adicione também as p
 
 ```bash
 ssh -i minha-chave.pem ubuntu@IP_PUBLICO
-curl -O https://raw.githubusercontent.com/<usuario>/<este-repositorio>/main/aws/setup_ec2.sh
-bash setup_ec2.sh https://github.com/<usuario>/<este-repositorio>.git
-cd <este-repositorio> && source venv/bin/activate
+curl -O https://raw.githubusercontent.com/fernandes-emmanuel/zeromq-Modificado/main/aws/setup_ec2.sh
+bash setup_ec2.sh https://github.com/fernandes-emmanuel/zeromq-Modificado.git
+cd zeromq-Modificado && source venv/bin/activate
 ```
 
 O script instala `python3-venv`/`git`, clona o repositório, cria o venv, instala o `pyzmq`
