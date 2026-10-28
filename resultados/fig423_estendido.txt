@@ -1,0 +1,190 @@
+----- fonte1
+fonte 1: tcp://*:4567, 40 tarefas
+fonte 1: 40 tarefas enviadas em 2.0s
+----- fonte2
+fonte 2: tcp://*:4568, 40 tarefas
+fonte 2: 40 tarefas enviadas em 2.0s
+----- worker1
+A@worker1 started, fontes: 172.28.0.30:4567, 172.28.0.31:4568
+A@worker1 received  26 from 1 (1-0)
+A@worker1 received  53 from 1 (1-3)
+A@worker1 received  31 from 1 (1-6)
+A@worker1 received  58 from 2 (2-2)
+A@worker1 received   6 from 1 (1-9)
+A@worker1 received  31 from 2 (2-5)
+A@worker1 received  53 from 1 (1-12)
+A@worker1 received  28 from 2 (2-8)
+A@worker1 received  87 from 1 (1-15)
+A@worker1 received  46 from 2 (2-11)
+A@worker1 received  91 from 1 (1-18)
+A@worker1 received  63 from 2 (2-14)
+A@worker1 received  99 from 1 (1-21)
+A@worker1 received  11 from 2 (2-17)
+A@worker1 received  27 from 1 (1-24)
+A@worker1 received  46 from 2 (2-20)
+A@worker1 received  42 from 1 (1-27)
+A@worker1 received  62 from 2 (2-23)
+A@worker1 received  13 from 1 (1-30)
+A@worker1 received  45 from 2 (2-26)
+A@worker1 received  87 from 1 (1-33)
+A@worker1 received  44 from 2 (2-29)
+A@worker1 received  35 from 1 (1-36)
+A@worker1 received  38 from 2 (2-32)
+A@worker1 received  24 from 1 (1-39)
+A@worker1 received   3 from 2 (2-35)
+A@worker1 received  50 from 2 (2-38)
+A@worker1: KILL recebido do sink, encerrando
+A@worker1: 27 tarefas processadas
+----- worker2
+B@worker2 started, fontes: 172.28.0.30:4567, 172.28.0.31:4568
+B@worker2 received  29 from 1 (1-1)
+B@worker2 received  70 from 1 (1-4)
+B@worker2 received  10 from 2 (2-0)
+B@worker2 received  21 from 1 (1-7)
+B@worker2 received  52 from 2 (2-3)
+B@worker2 received  93 from 1 (1-10)
+B@worker2 received  88 from 2 (2-6)
+B@worker2 received  20 from 1 (1-13)
+B@worker2 received  56 from 2 (2-9)
+B@worker2 received  40 from 1 (1-16)
+B@worker2 received  60 from 2 (2-12)
+B@worker2 received  46 from 1 (1-19)
+B@worker2 received  57 from 2 (2-15)
+B@worker2 received  88 from 1 (1-22)
+B@worker2 received  81 from 2 (2-18)
+B@worker2 received  41 from 1 (1-25)
+B@worker2 received  12 from 2 (2-21)
+B@worker2 received  32 from 1 (1-28)
+B@worker2 received  45 from 2 (2-24)
+B@worker2 received  48 from 1 (1-31)
+B@worker2 received  85 from 2 (2-27)
+B@worker2 received 100 from 1 (1-34)
+B@worker2 received  63 from 2 (2-30)
+B@worker2 received  93 from 1 (1-37)
+B@worker2 received  22 from 2 (2-33)
+B@worker2 received  79 from 2 (2-36)
+B@worker2 received  74 from 2 (2-39)
+B@worker2: KILL recebido do sink, encerrando
+B@worker2: 27 tarefas processadas
+----- worker3
+C@worker3 started, fontes: 172.28.0.30:4567, 172.28.0.31:4568
+C@worker3 received  95 from 1 (1-2)
+C@worker3 received   4 from 1 (1-5)
+C@worker3 received  94 from 2 (2-1)
+C@worker3 received  52 from 1 (1-8)
+C@worker3 received  39 from 2 (2-4)
+C@worker3 received   3 from 1 (1-11)
+C@worker3 received  82 from 2 (2-7)
+C@worker3 received  80 from 1 (1-14)
+C@worker3 received  44 from 2 (2-10)
+C@worker3 received  25 from 1 (1-17)
+C@worker3 received  33 from 2 (2-13)
+C@worker3 received  97 from 1 (1-20)
+C@worker3 received  19 from 2 (2-16)
+C@worker3 received  84 from 1 (1-23)
+C@worker3 received  63 from 2 (2-19)
+C@worker3 received  13 from 1 (1-26)
+C@worker3 received  81 from 2 (2-22)
+C@worker3 received  13 from 1 (1-29)
+C@worker3 received  28 from 2 (2-25)
+C@worker3 received  92 from 1 (1-32)
+C@worker3 received  69 from 2 (2-28)
+C@worker3 received  33 from 1 (1-35)
+C@worker3 received  21 from 2 (2-31)
+C@worker3 received  40 from 1 (1-38)
+C@worker3 received  70 from 2 (2-34)
+C@worker3 received  25 from 2 (2-37)
+C@worker3: KILL recebido do sink, encerrando
+C@worker3: 26 tarefas processadas
+----- sink
+sink: resultados em :5558, controle em :5559, aguardando 2 fontes
+sink: fonte 1 anunciou 40 tarefas
+sink: fonte 2 anunciou 40 tarefas
+sink: 1-0      feita por A@worker1 (0.000s) -> 2860 primos [1/80]
+sink: 1-1      feita por B@worker2 (0.000s) -> 3153 primos [2/80]
+sink: 1-3      feita por A@worker1 (0.000s) -> 5408 primos [3/80]
+sink: 1-4      feita por B@worker2 (0.001s) -> 6935 primos [4/80]
+sink: 1-6      feita por A@worker1 (0.000s) -> 3340 primos [5/80]
+sink: 2-0      feita por B@worker2 (0.000s) -> 1229 primos [6/80]
+sink: 1-7      feita por B@worker2 (0.000s) -> 2360 primos [7/80]
+sink: 2-2      feita por A@worker1 (0.000s) -> 5873 primos [8/80]
+sink: 1-9      feita por A@worker1 (0.000s) -> 783 primos [9/80]
+sink: 2-3      feita por B@worker2 (0.000s) -> 5319 primos [10/80]
+sink: 1-10     feita por B@worker2 (0.001s) -> 8984 primos [11/80]
+sink: 2-5      feita por A@worker1 (0.000s) -> 3340 primos [12/80]
+sink: 1-12     feita por A@worker1 (0.001s) -> 5408 primos [13/80]
+sink: 2-6      feita por B@worker2 (0.001s) -> 8543 primos [14/80]
+sink: 1-13     feita por B@worker2 (0.000s) -> 2262 primos [15/80]
+sink: 2-8      feita por A@worker1 (0.000s) -> 3055 primos [16/80]
+sink: 1-15     feita por A@worker1 (0.001s) -> 8450 primos [17/80]
+sink: 2-9      feita por B@worker2 (0.001s) -> 5683 primos [18/80]
+sink: 1-16     feita por B@worker2 (0.000s) -> 4203 primos [19/80]
+sink: 2-11     feita por A@worker1 (0.001s) -> 4761 primos [20/80]
+sink: 1-18     feita por A@worker1 (0.001s) -> 8802 primos [21/80]
+sink: 2-12     feita por B@worker2 (0.000s) -> 6057 primos [22/80]
+sink: 1-19     feita por B@worker2 (0.000s) -> 4761 primos [23/80]
+sink: 2-14     feita por A@worker1 (0.001s) -> 6320 primos [24/80]
+sink: 1-2      feita por C@worker3 (0.950s) [25/80]
+sink: 1-21     feita por A@worker1 (0.001s) -> 9505 primos [26/80]
+sink: 2-15     feita por B@worker2 (0.001s) -> 5782 primos [27/80]
+sink: 1-5      feita por C@worker3 (0.040s) [28/80]
+sink: 1-22     feita por B@worker2 (0.001s) -> 8543 primos [29/80]
+sink: 2-17     feita por A@worker1 (0.000s) -> 1335 primos [30/80]
+sink: 1-24     feita por A@worker1 (0.000s) -> 2961 primos [31/80]
+sink: 2-18     feita por B@worker2 (0.001s) -> 7925 primos [32/80]
+sink: 1-25     feita por B@worker2 (0.001s) -> 4291 primos [33/80]
+sink: 2-20     feita por A@worker1 (0.000s) -> 4761 primos [34/80]
+sink: 1-27     feita por A@worker1 (0.000s) -> 4392 primos [35/80]
+sink: 2-21     feita por B@worker2 (0.000s) -> 1438 primos [36/80]
+sink: 1-28     feita por B@worker2 (0.000s) -> 3432 primos [37/80]
+sink: 2-23     feita por A@worker1 (0.001s) -> 6232 primos [38/80]
+sink: 1-30     feita por A@worker1 (0.000s) -> 1547 primos [39/80]
+sink: 2-24     feita por B@worker2 (0.001s) -> 4675 primos [40/80]
+sink: 1-31     feita por B@worker2 (0.001s) -> 4946 primos [41/80]
+sink: 2-26     feita por A@worker1 (0.000s) -> 4675 primos [42/80]
+sink: 1-33     feita por A@worker1 (0.001s) -> 8450 primos [43/80]
+sink: 2-27     feita por B@worker2 (0.001s) -> 8277 primos [44/80]
+sink: 1-34     feita por B@worker2 (0.001s) -> 9592 primos [45/80]
+sink: 2-29     feita por A@worker1 (0.000s) -> 4579 primos [46/80]
+sink: 1-36     feita por A@worker1 (0.000s) -> 3732 primos [47/80]
+sink: 2-30     feita por B@worker2 (0.001s) -> 6320 primos [48/80]
+sink: 1-37     feita por B@worker2 (0.001s) -> 8984 primos [49/80]
+sink: 2-32     feita por A@worker1 (0.000s) -> 4017 primos [50/80]
+sink: 1-39     feita por A@worker1 (0.000s) -> 2668 primos [51/80]
+sink: 2-33     feita por B@worker2 (0.000s) -> 2464 primos [52/80]
+sink: 2-1      feita por C@worker3 (0.940s) [53/80]
+sink: 2-35     feita por A@worker1 (0.000s) -> 430 primos [54/80]
+sink: 2-36     feita por B@worker2 (0.001s) -> 7746 primos [55/80]
+sink: 2-38     feita por A@worker1 (0.000s) -> 5133 primos [56/80]
+sink: 2-39     feita por B@worker2 (0.001s) -> 7301 primos [57/80]
+sink: 1-8      feita por C@worker3 (0.520s) [58/80]
+sink: 2-4      feita por C@worker3 (0.390s) [59/80]
+sink: 1-11     feita por C@worker3 (0.030s) [60/80]
+sink: 2-7      feita por C@worker3 (0.820s) [61/80]
+sink: 1-14     feita por C@worker3 (0.800s) [62/80]
+sink: 2-10     feita por C@worker3 (0.440s) [63/80]
+sink: 1-17     feita por C@worker3 (0.250s) [64/80]
+sink: 2-13     feita por C@worker3 (0.330s) [65/80]
+sink: 1-20     feita por C@worker3 (0.970s) [66/80]
+sink: 2-16     feita por C@worker3 (0.190s) [67/80]
+sink: 1-23     feita por C@worker3 (0.840s) [68/80]
+sink: 2-19     feita por C@worker3 (0.630s) [69/80]
+sink: 1-26     feita por C@worker3 (0.130s) [70/80]
+sink: 2-22     feita por C@worker3 (0.810s) [71/80]
+sink: 1-29     feita por C@worker3 (0.130s) [72/80]
+sink: 2-25     feita por C@worker3 (0.280s) [73/80]
+sink: 1-32     feita por C@worker3 (0.920s) [74/80]
+sink: 2-28     feita por C@worker3 (0.690s) [75/80]
+sink: 1-35     feita por C@worker3 (0.330s) [76/80]
+sink: 2-31     feita por C@worker3 (0.210s) [77/80]
+sink: 1-38     feita por C@worker3 (0.400s) [78/80]
+sink: 2-34     feita por C@worker3 (0.700s) [79/80]
+sink: 2-37     feita por C@worker3 (0.250s) [80/80]
+
+===== relatorio do pipeline =====
+tarefas: 80 em 14.10s (5.7 tarefas/s)
+por fonte: 1=40, 2=40
+worker                        tarefas        %   ocupado(s)   workload
+A@worker1                          27    33.8%         0.01       1199
+B@worker2                          27    33.8%         0.02       1505
+C@worker3                          26    32.5%        13.00       1299

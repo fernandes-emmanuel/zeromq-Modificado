@@ -1,0 +1,24 @@
+----- worker A
+A started
+A received 93 from 1
+A received 89 from 2
+A received 38 from 1
+A received 72 from 2
+A received 25 from 1
+A received 22 from 2
+A received 13 from 1
+A received 63 from 2
+A received 68 from 1
+A received 93 from 2
+----- worker B
+B started
+B received 86 from 1
+B received 67 from 2
+B received 1 from 1
+B received 85 from 2
+B received 44 from 1
+B received 41 from 2
+B received 10 from 1
+B received 96 from 2
+B received 58 from 1
+B received 84 from 2

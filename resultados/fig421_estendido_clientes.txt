@@ -1,0 +1,65 @@
+== cliente1 (172.28.0.11): comandos unicos
+$ client.py --host 172.28.0.10 --cmd ECHO Hello world 1
+Hello world 1*   (13.14 ms)
+$ client.py --host 172.28.0.10 --cmd UPPER sistemas distribuidos
+SISTEMAS DISTRIBUIDOS   (2.38 ms)
+$ client.py --host 172.28.0.10 --cmd REVERSE zeromq
+qmorez   (2.09 ms)
+$ client.py --host 172.28.0.10 --cmd CALC (2+3)*7**2
+245   (2.18 ms)
+$ client.py --host 172.28.0.10 --cmd CALC __import__('os')
+ERRO: CALC: expressao invalida   (2.48 ms)
+$ client.py --host 172.28.0.10 --cmd TIME
+Wed Oct 28 21:50:42 2026   (1.77 ms)
+$ client.py --host 172.28.0.10 --cmd INFO
+{
+  "host": "servidor",
+  "ip": "172.28.0.10",
+  "ports": [
+    "4567",
+    "4568"
+  ]
+}   (2.58 ms)
+
+== cliente2 (172.28.0.12): modo interativo pela porta 4568
+Conectado a tcp://172.28.0.10:4568
+Comandos: ECHO <txt> | UPPER <txt> | REVERSE <txt> | TIME | CALC <expr>
+          INFO | STATS | STOP [senha] | QUIT (sai so do cliente)
+> Hello world 2*   (2.25 ms)
+> 2.5   (0.64 ms)
+> {
+  "uptime_s": 5.3,
+  "total": 10,
+  "by_cmd": {
+    "ECHO": 2,
+    "UPPER": 1,
+    "REVERSE": 1,
+    "CALC": 3,
+    "TIME": 1,
+    "INFO": 1,
+    "STATS": 1
+  },
+  "by_client": {
+    "cliente1": 7,
+    "cliente2": 3
+  }
+}   (0.54 ms)
+> 
+== cliente original (texto puro) falando com o servidor estendido
+Hello world 1*
+
+== benchmark de outro host (1000 requisicoes)
+benchmark tcp://172.28.0.10:4567: 1000 requisicoes
+  media 0.333 ms | mediana 0.320 ms | min 0.179 ms | p95 0.479 ms | max 2.030 ms
+  vazao aprox.: 2999 req/s
+
+== STOP com senha errada e depois correta
+ERRO: STOP: senha incorreta   (2.85 ms)
+servidor encerrando   (2.32 ms)
+
+== servidor fora do ar: timeout + novas tentativas
+  [timeout] sem resposta de tcp://172.28.0.10:4567 (tentativa 1/3)
+  [timeout] sem resposta de tcp://172.28.0.10:4567 (tentativa 2/3)
+  [timeout] sem resposta de tcp://172.28.0.10:4567 (tentativa 3/3)
+ERRO: servidor tcp://172.28.0.10:4567 indisponivel
+codigo de saida: 2

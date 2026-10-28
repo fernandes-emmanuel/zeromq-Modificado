@@ -1,0 +1,4 @@
+publisher 'pub3' em tcp://*:4567 topicos=[] intervalo=5.0s
+digite mensagens para publicar no topico CHAT (Ctrl+D encerra)
+-> CHAT  #1 ola de outra maquina!
+-> CHAT  #2 ZeroMQ PUB/SUB funcionando

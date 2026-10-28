@@ -1,0 +1,6 @@
+cliente1 (172.28.0.11) -> porta 4567:
+Hello world 1*
+cliente2 (172.28.0.12) -> porta 4568:
+Hello world 2*
+client.py (envia STOP):
+Hello world 1*

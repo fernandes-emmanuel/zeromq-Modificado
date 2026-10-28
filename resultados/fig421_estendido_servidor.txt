@@ -1,0 +1,15 @@
+[21:50:38] servidor servidor (172.28.0.10) escutando nas portas 4567, 4568
+[21:50:39] cliente1        ECHO     'Hello world 1' -> Hello world 1*
+[21:50:40] cliente1        UPPER    'sistemas distribuidos' -> SISTEMAS DISTRIBUIDOS
+[21:50:41] cliente1        REVERSE  'zeromq' -> qmorez
+[21:50:41] cliente1        CALC     '(2+3)*7**2' -> 245
+[21:50:42] cliente1        CALC     "__import__('os')" -> CALC: expressao invalida
+[21:50:42] cliente1        TIME     '' -> Wed Oct 28 21:50:42 2026
+[21:50:43] cliente1        INFO     '' -> {'host': 'servidor', 'ip': '172.28.0.10', 'ports': ['4567', '4568']}
+[21:50:43] cliente2        ECHO     'Hello world 2' -> Hello world 2*
+[21:50:43] cliente2        CALC     '10/4' -> 2.5
+[21:50:43] cliente2        STATS    '' -> {'uptime_s': 5.3, 'total': 10, 'by_cmd': {'ECHO': 2, 'UPPER': 1, 'REVERSE': 1, 'CALC': 3, 'TIME': 1, 'INFO': 1, 'STATS': 1}, 'by_client': {'cliente1': 7, 'cliente2': 3}}
+[21:50:44] legacy  -> 'Hello world 1'
+[21:50:45] cliente1        STOP     'errada' -> STOP: senha incorreta
+[21:50:46] cliente1        STOP     'segredo' -> servidor encerrando
+[21:50:46] servidor finalizado. total de requisicoes: 1013

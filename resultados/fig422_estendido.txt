@@ -1,0 +1,110 @@
+----- pub1
+publisher 'pub1' em tcp://*:4567 topicos=['TIME', 'SYS'] intervalo=1.0s
+-> TIME  (formato original) Wed Oct 28 21:51:16 2026
+-> SYS   #1 {'cpus': 4, 'loadavg': [0.58, 0.32, 0.13], 'mem_used_pct': 4.1}
+-> TIME  (formato original) Wed Oct 28 21:51:17 2026
+-> SYS   #2 {'cpus': 4, 'loadavg': [0.58, 0.32, 0.13], 'mem_used_pct': 4.2}
+-> TIME  (formato original) Wed Oct 28 21:51:18 2026
+-> SYS   #3 {'cpus': 4, 'loadavg': [0.58, 0.32, 0.13], 'mem_used_pct': 4.2}
+-> TIME  (formato original) Wed Oct 28 21:51:19 2026
+-> SYS   #4 {'cpus': 4, 'loadavg': [0.58, 0.32, 0.13], 'mem_used_pct': 4.2}
+-> TIME  (formato original) Wed Oct 28 21:51:20 2026
+-> SYS   #5 {'cpus': 4, 'loadavg': [0.58, 0.32, 0.13], 'mem_used_pct': 4.2}
+-> TIME  (formato original) Wed Oct 28 21:51:21 2026
+-> SYS   #6 {'cpus': 4, 'loadavg': [0.61, 0.33, 0.14], 'mem_used_pct': 4.2}
+-> TIME  (formato original) Wed Oct 28 21:51:22 2026
+-> SYS   #7 {'cpus': 4, 'loadavg': [0.61, 0.33, 0.14], 'mem_used_pct': 4.1}
+-> TIME  (formato original) Wed Oct 28 21:51:23 2026
+-> SYS   #8 {'cpus': 4, 'loadavg': [0.61, 0.33, 0.14], 'mem_used_pct': 4.1}
+-> TIME  (formato original) Wed Oct 28 21:51:24 2026
+-> SYS   #9 {'cpus': 4, 'loadavg': [0.61, 0.33, 0.14], 'mem_used_pct': 3.8}
+-> TIME  (formato original) Wed Oct 28 21:51:25 2026
+-> SYS   #10 {'cpus': 4, 'loadavg': [0.61, 0.33, 0.14], 'mem_used_pct': 3.8}
+-> TIME  (formato original) Wed Oct 28 21:51:26 2026
+-> SYS   #11 {'cpus': 4, 'loadavg': [0.64, 0.34, 0.14], 'mem_used_pct': 3.8}
+-> TIME  (formato original) Wed Oct 28 21:51:27 2026
+-> SYS   #12 {'cpus': 4, 'loadavg': [0.64, 0.34, 0.14], 'mem_used_pct': 3.8}
+----- pub2
+publisher 'pub2' em tcp://*:4567 topicos=['TIME', 'SYS', 'NEWS'] intervalo=1.0s
+-> TIME  #1 Wed Oct 28 21:51:17 2026
+-> SYS   #1 {'cpus': 4, 'loadavg': [0.58, 0.32, 0.13], 'mem_used_pct': 4.2}
+-> NEWS  #1 NEWS rodada 1
+-> TIME  #2 Wed Oct 28 21:51:18 2026
+-> SYS   #2 {'cpus': 4, 'loadavg': [0.58, 0.32, 0.13], 'mem_used_pct': 4.2}
+-> NEWS  #2 NEWS rodada 2
+-> TIME  #3 Wed Oct 28 21:51:19 2026
+-> SYS   #3 {'cpus': 4, 'loadavg': [0.58, 0.32, 0.13], 'mem_used_pct': 4.2}
+-> NEWS  #3 NEWS rodada 3
+-> TIME  #4 Wed Oct 28 21:51:20 2026
+-> SYS   #4 {'cpus': 4, 'loadavg': [0.58, 0.32, 0.13], 'mem_used_pct': 4.2}
+-> NEWS  #4 NEWS rodada 4
+-> TIME  #5 Wed Oct 28 21:51:21 2026
+-> SYS   #5 {'cpus': 4, 'loadavg': [0.58, 0.32, 0.13], 'mem_used_pct': 4.2}
+-> NEWS  #5 NEWS rodada 5
+-> TIME  #6 Wed Oct 28 21:51:22 2026
+-> SYS   #6 {'cpus': 4, 'loadavg': [0.61, 0.33, 0.14], 'mem_used_pct': 4.1}
+-> NEWS  #6 NEWS rodada 6
+-> TIME  #7 Wed Oct 28 21:51:23 2026
+-> SYS   #7 {'cpus': 4, 'loadavg': [0.61, 0.33, 0.14], 'mem_used_pct': 4.1}
+-> NEWS  #7 NEWS rodada 7
+-> TIME  #8 Wed Oct 28 21:51:24 2026
+-> SYS   #8 {'cpus': 4, 'loadavg': [0.61, 0.33, 0.14], 'mem_used_pct': 4.0}
+-> NEWS  #8 NEWS rodada 8
+-> TIME  #9 Wed Oct 28 21:51:25 2026
+-> SYS   #9 {'cpus': 4, 'loadavg': [0.61, 0.33, 0.14], 'mem_used_pct': 3.8}
+-> NEWS  #9 NEWS rodada 9
+-> TIME  #10 Wed Oct 28 21:51:26 2026
+-> SYS   #10 {'cpus': 4, 'loadavg': [0.61, 0.33, 0.14], 'mem_used_pct': 3.8}
+-> NEWS  #10 NEWS rodada 10
+-> TIME  #11 Wed Oct 28 21:51:27 2026
+-> SYS   #11 {'cpus': 4, 'loadavg': [0.64, 0.34, 0.14], 'mem_used_pct': 3.8}
+-> NEWS  #11 NEWS rodada 11
+-> TIME  #12 Wed Oct 28 21:51:28 2026
+-> SYS   #12 {'cpus': 4, 'loadavg': [0.64, 0.34, 0.14], 'mem_used_pct': 3.7}
+-> NEWS  #12 NEWS rodada 12
+----- sub1
+conectado a tcp://172.28.0.20:4567
+conectado a tcp://172.28.0.21:4567
+assinando topicos: ['TIME']
+[21:51:16] (original) TIME Wed Oct 28 21:51:16 2026
+[21:51:17] TIME  #1    de pub2         atraso   0.70 ms: Wed Oct 28 21:51:17 2026
+[21:51:17] (original) TIME Wed Oct 28 21:51:17 2026
+[21:51:18] TIME  #2    de pub2         atraso   0.48 ms: Wed Oct 28 21:51:18 2026
+[21:51:18] (original) TIME Wed Oct 28 21:51:18 2026
+[21:51:19] TIME  #3    de pub2         atraso   0.68 ms: Wed Oct 28 21:51:19 2026
+
+--- resumo ---
+pub2         TIME  recebidas=3    perdidas=0   atraso medio=0.62 ms
+----- sub2
+conectado a tcp://172.28.0.20:4567
+conectado a tcp://172.28.0.21:4567
+assinando topicos: ['SYS', 'NEWS']
+[21:51:16] SYS   #1    de pub1         atraso   0.61 ms: {'cpus': 4, 'loadavg': [0.58, 0.32, 0.13], 'mem_used_pct': 4.1}
+[21:51:17] SYS   #1    de pub2         atraso   0.39 ms: {'cpus': 4, 'loadavg': [0.58, 0.32, 0.13], 'mem_used_pct': 4.2}
+[21:51:17] NEWS  #1    de pub2         atraso   0.50 ms: NEWS rodada 1
+[21:51:17] SYS   #2    de pub1         atraso   0.60 ms: {'cpus': 4, 'loadavg': [0.58, 0.32, 0.13], 'mem_used_pct': 4.2}
+[21:51:18] SYS   #2    de pub2         atraso   0.38 ms: {'cpus': 4, 'loadavg': [0.58, 0.32, 0.13], 'mem_used_pct': 4.2}
+[21:51:18] NEWS  #2    de pub2         atraso   0.40 ms: NEWS rodada 2
+[21:51:18] SYS   #3    de pub1         atraso   0.35 ms: {'cpus': 4, 'loadavg': [0.58, 0.32, 0.13], 'mem_used_pct': 4.2}
+[21:51:19] SYS   #3    de pub2         atraso   0.52 ms: {'cpus': 4, 'loadavg': [0.58, 0.32, 0.13], 'mem_used_pct': 4.2}
+[21:51:19] NEWS  #3    de pub2         atraso   0.48 ms: NEWS rodada 3
+[21:51:19] SYS   #4    de pub1         atraso   0.40 ms: {'cpus': 4, 'loadavg': [0.58, 0.32, 0.13], 'mem_used_pct': 4.2}
+
+--- resumo ---
+pub1         SYS   recebidas=4    perdidas=0   atraso medio=0.49 ms
+pub2         NEWS  recebidas=3    perdidas=0   atraso medio=0.46 ms
+pub2         SYS   recebidas=3    perdidas=0   atraso medio=0.43 ms
+----- sub-orig
+TIME Wed Oct 28 21:51:17 2026
+TIME Wed Oct 28 21:51:18 2026
+TIME Wed Oct 28 21:51:19 2026
+TIME Wed Oct 28 21:51:20 2026
+TIME Wed Oct 28 21:51:21 2026
+----- sub3
+conectado a tcp://172.28.0.25:4567
+assinando topicos: ['CHAT']
+[21:51:20] CHAT  #1    de pub3         atraso   0.72 ms: ola de outra maquina!
+[21:51:21] CHAT  #2    de pub3         atraso   0.57 ms: ZeroMQ PUB/SUB funcionando
+
+--- resumo ---
+pub3         CHAT  recebidas=2    perdidas=0   atraso medio=0.64 ms
