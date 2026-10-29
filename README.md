@@ -256,7 +256,7 @@ Ao final, pare ou termine as instâncias para não gerar custo.
 ## Testes realizados e resultados
 
 Os testes entre máquinas diferentes foram feitos com o script
-[`docker/teste_multihost.sh`](docker/teste_multihost.sh) cria uma rede `172.28.0.0/16` e
+[`docker/teste_multihost.sh`](docker/teste_multihost.sh), que cria uma rede `172.28.0.0/16` e
 sobe **cada componente em um container separado, com hostname e IP próprios**
 (servidor `172.28.0.10`, clientes `.11`/`.12`, publishers `.20`/`.21`/`.25`, fontes `.30`/`.31`,
 sink `.32`, workers `.40`–`.42`). Ele executa tanto o **código original** (apenas com o IP
